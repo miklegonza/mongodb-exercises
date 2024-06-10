@@ -1,0 +1,19 @@
+
+
+.nav-link {
+    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
+}
+
+.nav-link:hover {
+    color: #0f0 !important;
+    text-shadow: 1px 1px 10px #0f0, 1px 1px 10px #0a0;
+}
+
+.navbar-brand {
+    font-family: var(--zen-dots);
+    text-shadow: 1px 1px 5px #fff, 1px 1px 2px #ccc;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}

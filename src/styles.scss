@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Zen+Dots&display=swap');
+
+:root {
+    color-scheme: light dark;
+    --zen-dots: "Zen Dots", sans-serif;
+    --anonymous: "Anonymous Pro", monospace;
+    --background: #262828;
+}
+
+* {
+    background-color: var(--background);
+    font-family: var(--anonymous);
+    font-weight: 700;
+    color: #fff;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.glow {
+    border: 1px #0f0 solid;
+    box-shadow: 0 0 4px 2px #0f0, inset 0 0  4px 2px #0f0;
+}
