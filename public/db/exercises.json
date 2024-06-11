@@ -1,0 +1,220 @@
+[
+    {
+        "exercise": "1",
+        "type": "find",
+        "command": [
+            { "nombre": "Tara" },
+            {
+                "_id": false,
+                "nombre": true,
+                "primer_apellido": true,
+                "identificacion": true,
+                "activo": true
+            }
+        ],
+        "answer": "En Skyndu trabajan 3 desarrolladores: Ives, Alleyn y Di."
+    },
+    {
+        "exercise": "2a",
+        "type": "find",
+        "command": [
+            {
+                "trabaja_en": "Skyndu"
+            },
+            {
+                "_id": false,
+                "nombre": true,
+                "primer_apellido": true,
+                "identificacion": true,
+                "desarrollador": true
+            }
+        ],
+        "answer": "Los tres desarrolladores se encuentran inactivos en la actualidad"
+    },
+    {
+        "exercise": "2b",
+        "type": "find",
+        "command": [
+            {
+                "trabaja_en": "Skyndu",
+                "activo": "0"
+            },
+            {
+                "_id": false,
+                "nombre": true,
+                "primer_apellido": true,
+                "identificacion": true,
+                "desarrollador": true,
+                "activo": true
+            }
+        ],
+        "answer": "Solo un empleado tuvo acceso el día del incidente. Alleyn figura en la base de datos con esta fecha."
+    },
+    {
+        "exercise": "2c",
+        "type": "find",
+        "command": [
+            {
+                "trabaja_en": "Skyndu",
+                "fec_ultimo_acceso": "2021-04-30"
+            },
+            {
+                "_id": false,
+                "nombre": true,
+                "primer_apellido": true,
+                "segundo_apellido": true,
+                "identificacion": true,
+                "ciudad": true,
+                "desarrollador": true,
+                "correo": true
+            }
+        ],
+        "answer": "Solo un empleado tuvo acceso el día del incidente. Alleyn figura en la base de datos con esta fecha."
+    },
+    {
+        "exercise": "2d",
+        "type": "updateOne",
+        "command": [
+            {
+                "trabaja_en": "Skyndu",
+                "fec_ultimo_acceso": "2021-04-30"
+            },
+            {
+                "$set": {
+                    "departamentos_afectados": [
+                        "Contabilidad",
+                        "Recursos humanos",
+                        "Ventas"
+                    ]
+                }
+            }
+        ],
+        "answer": "Se agregaron satisfactoriamente las tres áreas afectadas, que fueron contabilidad, recursos humanos y ventas."
+    },
+    {
+        "exercise": "3",
+        "type": "find",
+        "command": [
+            {
+                "$and": [
+                    { "edad": { "$gte": "20" } },
+                    { "edad": { "$lte": "30" } },
+                    { "activo": "1" }
+                ]
+            },
+            {
+                "_id": false,
+                "nombre": true,
+                "primer_apellido": true,
+                "edad": true,
+                "activo": true,
+                "reportes": true
+            }
+        ],
+        "answer": "La lista de empleados entre 20 y 30 años que se encuentran activos es de 66 personas en total."
+    },
+    {
+        "exercise": "3a",
+        "type": "updateMany",
+        "command": [
+            {
+                "$and": [
+                    { "edad": { "$gte": "20" } },
+                    { "edad": { "$lte": "30" } },
+                    { "activo": "1" },
+                    { "reportes": "5" }
+                ]
+            },
+            {
+                "$set": {
+                    "activo": "0"
+                }
+            }
+        ],
+        "answer": "Se cambió el estado de activo de 12 empleados que tenían registro de 5 reportes en la base de datos."
+    },
+    {
+        "exercise": "3b",
+        "type": "updateMany",
+        "command": [
+            {
+                "$and": [
+                    { "edad": { "$gte": "20" } },
+                    { "edad": { "$lte": "30" } },
+                    { "activo": "1" },
+                    {
+                        "$or": [{ "reportes": "3" }, { "reportes": "4" }]
+                    }
+                ]
+            },
+            {
+                "$set": {
+                    "periodo_prueba": true
+                }
+            }
+        ],
+        "answer": "Los 19 empleados que cuentan con 3 o 4 reportes ahora tienen el atributo de periodo de prueba establecido en verdadero."
+    },
+    {
+        "exercise": "4",
+        "type": "deleteMany",
+        "command": [
+            {
+                "$and": [
+                    { "reportes": { "$gte": "0" } },
+                    { "reportes": { "$lte": "2" } },
+                    { "activo": "0" },
+                    { "carnetizado": "0" }
+                ]
+            }
+        ],
+        "answer": "Se han eliminado 69 empleados de la base de datos que se encontraban desvinculados, descarnetizados y con máximo 2 reportes."
+    },
+    {
+        "exercise": "5a",
+        "type": "updateMany",
+        "command": [
+            { "seguridad_social": null },
+            [
+                {
+                    "$set": {
+                        "seguridad_social": {
+                            "$cond": {
+                                "if": { "$eq": ["$activo", "1"] },
+                                "then": "PENDIENTE",
+                                "else": "0"
+                            }
+                        }
+                    }
+                }
+            ]
+        ],
+        "answer": "A aquellos empleados que no contaban con un campo de seguridad social se les agregó la propiedad. Si el empleado figura como activo en la empresa, se le otorga el estado de ‘PENDIENTE’, pero si no está activo, el valor es falso. Se modificaron 189 empleados en total, de los cuales 100 están activos y 89 inactivos."
+    },
+    {
+        "exercise": "6",
+        "type": "updateOne",
+        "command": [
+            {
+                "nombre": "Stephi",
+                "primer_apellido": "Dunbar"
+            },
+            {
+                "$set": {
+                    "identificacion": "654132864786",
+                    "banco": "BBVA",
+                    "seguridad_social": "1",
+                    "cuenta": "986132167973216"
+                }
+            }
+        ],
+        "answer": "Se modificó exitosamente el registro de la empleada Stephi Dunbar para agregar su nueva cuenta bancaria, número de documento y actualizar el estado de la seguridad social."
+    },
+    {
+        "exercise": "7",
+        "type": "find",
+        "command": [{ "ciudad": "Amsterdam" }],
+        "count": true,
+        "answer": ""
+    }
+]
