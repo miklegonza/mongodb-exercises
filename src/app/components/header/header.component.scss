@@ -1,17 +1,16 @@
-
-
 .nav-link {
-    text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
+    text-shadow: var(--text-shadow);
 }
 
 .nav-link:hover {
-    color: #0f0 !important;
-    text-shadow: 1px 1px 10px #0f0, 1px 1px 10px #0a0;
+    color: var(--border-color) !important;
+    text-shadow: 1px 1px 10px var(--border-color),
+        1px 1px 10px var(--border-color);
 }
 
 .navbar-brand {
     font-family: var(--zen-dots);
-    text-shadow: 1px 1px 5px #fff, 1px 1px 2px #ccc;
+    text-shadow: var(--text-shadow);
 }
 
 .navbar-collapse {

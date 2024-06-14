@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import exercisesJson from '../../../../public/db/exercises.json';
+import { RouterLink } from '@angular/router';
 
 export interface Exercise {
     exercise: string;
@@ -12,7 +13,7 @@ export interface Exercise {
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })

@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Zen+Dots&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Zen+Dots&display=swap");
 
 :root {
     color-scheme: light dark;
     --zen-dots: "Zen Dots", sans-serif;
     --anonymous: "Anonymous Pro", monospace;
     --background: #262828;
+    --border-color: #0f0;
+    --text-shadow: 1px 1px 15px #fff;
 }
 
 * {
@@ -19,6 +21,7 @@
 }
 
 .glow {
-    border: 1px #0f0 solid;
-    box-shadow: 0 0 4px 2px #0f0, inset 0 0  4px 2px #0f0;
+    border: 1px var(--border-color) solid;
+    box-shadow: 0 0 4px 2px var(--border-color),
+        inset 0 0 4px 2px var(--border-color);
 }
