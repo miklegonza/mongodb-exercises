@@ -1,1 +1,25 @@
-<p>ex-1 works!</p>
+<section class="container mt-2">
+    <div class="col-12 text-center">
+        <h3 class="fw-bold pt-2 m-0">Ejercicio {{ num }}</h3>
+    </div>
+    <div class="result row">
+        <div class="col-6 p-3 h-100">
+            <div class="glow pb-2 overflow-auto scroll h-100">
+                <p class="bg-custom fs-5">Comando</p>
+                <pre class="mx-4"><code [innerHTML]="command"></code></pre>
+            </div>
+        </div>
+        <div class="col-6 p-3 h-100">
+            <div class="h-100 d-flex flex-column gap-4">
+                <div class="glow px-4 py-2 overflow-auto scroll h-75">
+                    <p class="fs-5 m-0">Resultado</p>
+                    <pre><code [innerHTML]="result"></code></pre>
+                </div>
+                <div class="glow px-4 py-2 overflow-auto scroll h-25">
+                    <p class="fs-5 m-0">Respuesta</p>
+                    <p>{{ answer }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

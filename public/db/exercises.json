@@ -12,6 +12,14 @@
                 "activo": true
             }
         ],
+        "result": [
+            {
+                "nombre": "Tara",
+                "primer_apellido": "Parrot",
+                "identificacion": "560210282",
+                "activo": "0"
+            }
+        ],
         "answer": "En Skyndu trabajan 3 desarrolladores: Ives, Alleyn y Di."
     },
     {
@@ -27,6 +35,29 @@
                 "primer_apellido": true,
                 "identificacion": true,
                 "desarrollador": true
+            }
+        ],
+        "result": [
+            {
+                "nombre": "Alleyn",
+                "primer_apellido": "Corneljes",
+                "identificacion": "615842724",
+                "desarrollador": "senior",
+                "activo": "0"
+            },
+            {
+                "nombre": "Di",
+                "primer_apellido": "Wauchope",
+                "identificacion": "111200870",
+                "desarrollador": "semi-senior",
+                "activo": "0"
+            },
+            {
+                "nombre": "Ives",
+                "primer_apellido": "Takle",
+                "identificacion": "661939008",
+                "desarrollador": "semi-senior",
+                "activo": "0"
             }
         ],
         "answer": "Los tres desarrolladores se encuentran inactivos en la actualidad"
